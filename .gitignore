@@ -2,7 +2,6 @@
 __pycache__/
 *.py[cod]
 *$py.class
-*.so
 *.egg
 *.egg-info/
 dist/
@@ -32,17 +31,20 @@ venv.bak/
 .DS_Store
 Thumbs.db
 
-# Logs (keep structure but ignore new logs)
+# Logs (keep structure but ignore new evaluation logs)
 logs/**/events.out.tfevents.*
 logs/**/*.log
 logs/**/checkpoint_*.pt
 logs/eval_old_*.csv
 logs/eval_old_*.meta.json
+logs_new/
 
 # Temporary files
 *.tmp
 *.bak
 *.backup
 
-# Keep checkpoint structure
+# Keep compiled modules (.so files are REQUIRED)
+# Keep checkpoint files
 !logs/**/hetero_best.pt
+!**/*.so
