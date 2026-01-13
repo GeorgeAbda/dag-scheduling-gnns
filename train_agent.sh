@@ -36,7 +36,7 @@ if d.get('host_specs_file'):
     os.environ['HOST_SPECS_PATH'] = os.path.abspath(d['host_specs_file'])
 
 # Import and run
-from cogito.gnn_deeprl_model.ablation_gnn_traj_main import main, Args
+from cogito.gnn_deeprl_model.train import main, Args
 
 # Build args from config - set all attributes that exist
 a = Args()
