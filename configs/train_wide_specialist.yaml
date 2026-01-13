@@ -1,0 +1,51 @@
+# Training Configuration: Wide Specialist
+experiment:
+  name: "wide_specialist"
+  seed: 12345
+  output_dir: "logs"
+  device: "cpu"
+
+training:
+  total_timesteps: 2000000
+  learning_rate: 0.00025
+  num_envs: 10
+  num_steps: 256
+  gamma: 0.99
+  gae_lambda: 0.95
+  num_minibatches: 4
+  update_epochs: 4
+  clip_coef: 0.2
+  ent_coef: 0.0
+  vf_coef: 0.5
+  max_grad_norm: 0.5
+  anneal_lr: true
+
+evaluation:
+  test_every_iters: 5
+  robust_eval_alpha: 0.25
+
+domain:
+  longcp_config: null
+  wide_config: "data/rl_configs/train_wide_p005_seeds.json"
+  
+  # Host hardware specifications - CHANGE THIS depending on experiment:
+  # - "data/host_specs.json"           : Heterogeneous hosts (default)
+  # - "data/host_specs_homospeed.json" : Homogeneous CPU speed
+  # - "data/host_specs_homoPower.json" : Homogeneous power consumption
+  host_specs_file: "data/host_specs.json"
+
+# Training seeds are loaded from the domain config file (training_seeds field)
+seed_control:
+  mode: "controlled"
+
+variant:
+  name: "hetero"
+
+trajectory:
+  enabled: false
+  collect_every: 10
+  method: "svd"
+
+logging:
+  tensorboard: true
+  log_every: 10

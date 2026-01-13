@@ -1,0 +1,41 @@
+# Configuration for evaluating trained agents across different host regimes
+# Used by eval_agents.py
+
+# Seed configurations
+seeds:
+  longcp:
+    path: data/rl_configs/train_long_cp_p08_seeds.json
+  wide:
+    path: data/rl_configs/train_wide_p005_seeds.json
+
+# Host regime configurations
+regimes:
+  AL:
+    label: "AL (Aligned - Heterogeneous)"
+    host_specs: data/host_specs_AL.json
+    longcp_checkpoint: logs/longcp_aligned/ablation/per_variant/hetero/hetero_best.pt
+    wide_checkpoint: logs/wide_aligned/ablation/per_variant/hetero/hetero_best.pt
+  HS:
+    label: "HS (Homogeneous Speed)"
+    host_specs: data/host_specs_homospeed.json
+    longcp_checkpoint: logs/longcp_homospeed/ablation/per_variant/hetero/hetero_best.pt
+    wide_checkpoint: logs/wide_homospeed/ablation/per_variant/hetero/hetero_best.pt
+  HP:
+    label: "HP (Homogeneous Power)"
+    host_specs: data/host_specs_homoPower.json
+    longcp_checkpoint: logs/longcp_homopower/ablation/per_variant/hetero/hetero_best.pt
+    wide_checkpoint: logs/wide_homopower/ablation/per_variant/hetero/hetero_best.pt
+  NA:
+    label: "NA (Not Aligned)"
+    host_specs: data/host_specs_NAL.json
+    longcp_checkpoint: logs/longcp_not_aligned/ablation/per_variant/hetero/hetero_best.pt
+    wide_checkpoint: logs/wide_not_aligned/ablation/per_variant/hetero/hetero_best.pt
+
+# Evaluation settings
+evaluation:
+  repeats_per_seed: 5
+  device: cpu
+
+# Output settings
+output:
+  dir: logs/agent_eval

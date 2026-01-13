@@ -1,0 +1,34 @@
+# Primary
+gymnasium==0.28.1
+torch==2.4.1
+torch_geometric==2.6.1
+numpy<2
+scipy==1.14.1
+tyro==0.8.10
+
+# Monitoring
+wandb==0.18.7
+icecream==2.1.3
+tqdm==4.67.1
+tensorboard==2.18.0
+
+# Solvers
+ortools==9.11.4210
+py4j==0.10.9.7
+pygad==3.3.1
+git+https://github.com/mackncheesiest/heft
+
+# Visualizers
+matplotlib==3.9.2
+pygraphviz==1.14
+networkx==3.4.2
+pandas==2.2.3
+seaborn==0.13.2
+scikit-learn==1.5.2
+
+# Dev dependencies
+black==24.10.0
+mypy==1.13.0
+types-tqdm==4.67.0.20241119
+pyqt6==6.7.1
+pandas-stubs==2.2.3.241009

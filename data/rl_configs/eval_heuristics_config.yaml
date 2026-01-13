@@ -1,0 +1,34 @@
+# Configuration for heuristic evaluation across multiple cases
+# Used by eval_heuristics_multi_cases.py
+
+# Seed configuration files
+configs:
+  longcp:
+    path: data/rl_configs/train_long_cp_p08_seeds.json
+    label: longcp
+  wide:
+    path: data/rl_configs/train_wide_p005_seeds.json
+    label: wide
+
+# Host specification cases
+cases:
+  AL:
+    path: data/host_specs_AL.json
+    label: AL
+    description: "All different (heterogeneous)"
+  HS:
+    path: data/host_specs_homospeed.json
+    label: HS
+    description: "Homogeneous speed"
+  HP:
+    path: data/host_specs_homoPower.json
+    label: HP
+    description: "Homogeneous power"
+  NA:
+    path: logs/NAL_case/host_specs.json
+    label: NA
+    description: "NAL case"
+
+# Output settings
+output:
+  dir: logs/heuristic_multi_cases

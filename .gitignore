@@ -1,0 +1,48 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+.Python
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Environment
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs (keep structure but ignore new logs)
+logs/**/events.out.tfevents.*
+logs/**/*.log
+logs/**/checkpoint_*.pt
+logs/eval_old_*.csv
+logs/eval_old_*.meta.json
+
+# Temporary files
+*.tmp
+*.bak
+*.backup
+
+# Keep checkpoint structure
+!logs/**/hetero_best.pt

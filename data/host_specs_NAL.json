@@ -1,0 +1,102 @@
+[
+  {
+    "name": "Titan H3",
+    "cores": 176,
+    "cpu_speed_gips": 800.0,
+    "memory_gb": 256,
+    "disk_tb": 12,
+    "bandwidth_gbps": 2.5,
+    "power_idle_watt": 700,
+    "power_peak_watt": 1800
+  },
+  {
+    "name": "Titan H2",
+    "cores": 168,
+    "cpu_speed_gips": 720.0,
+    "memory_gb": 224,
+    "disk_tb": 12,
+    "bandwidth_gbps": 2.5,
+    "power_idle_watt": 650,
+    "power_peak_watt": 1700
+  },
+  {
+    "name": "Titan H1",
+    "cores": 160,
+    "cpu_speed_gips": 650.0,
+    "memory_gb": 192,
+    "disk_tb": 12,
+    "bandwidth_gbps": 2.0,
+    "power_idle_watt": 600,
+    "power_peak_watt": 1600
+  },
+  {
+    "name": "Burst M2",
+    "cores": 152,
+    "cpu_speed_gips": 500.0,
+    "memory_gb": 160,
+    "disk_tb": 10,
+    "bandwidth_gbps": 2.0,
+    "power_idle_watt": 500,
+    "power_peak_watt": 1200
+  },
+  {
+    "name": "Burst M1",
+    "cores": 144,
+    "cpu_speed_gips": 420.0,
+    "memory_gb": 160,
+    "disk_tb": 10,
+    "bandwidth_gbps": 2.0,
+    "power_idle_watt": 450,
+    "power_peak_watt": 1100
+  },
+  {
+    "name": "Eco L5",
+    "cores": 136,
+    "cpu_speed_gips": 240.0,
+    "memory_gb": 144,
+    "disk_tb": 10,
+    "bandwidth_gbps": 1.5,
+    "power_idle_watt": 150,
+    "power_peak_watt": 300
+  },
+  {
+    "name": "Eco L4",
+    "cores": 128,
+    "cpu_speed_gips": 220.0,
+    "memory_gb": 128,
+    "disk_tb": 10,
+    "bandwidth_gbps": 1.5,
+    "power_idle_watt": 140,
+    "power_peak_watt": 280
+  },
+  {
+    "name": "Eco L3",
+    "cores": 120,
+    "cpu_speed_gips": 200.0,
+    "memory_gb": 96,
+    "disk_tb": 8,
+    "bandwidth_gbps": 1.5,
+    "power_idle_watt": 130,
+    "power_peak_watt": 260
+  },
+  {
+    "name": "Eco L2",
+    "cores": 112,
+    "cpu_speed_gips": 180.0,
+    "memory_gb": 96,
+    "disk_tb": 8,
+    "bandwidth_gbps": 1.0,
+    "power_idle_watt": 120,
+    "power_peak_watt": 240
+  },
+  {
+    "name": "Eco L1",
+    "cores": 104,
+    "cpu_speed_gips": 160.0,
+    "memory_gb": 80,
+    "disk_tb": 8,
+    "bandwidth_gbps": 1.0,
+    "power_idle_watt": 110,
+    "power_peak_watt": 220
+  }
+]
