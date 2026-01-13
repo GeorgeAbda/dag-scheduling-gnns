@@ -756,6 +756,7 @@ def main(a: Args) -> None:
         "makespan",
         "energy_total",
         "energy_active",
+        "energy_env_active",
         "energy_idle",
         "entropy",
     ]
@@ -775,6 +776,7 @@ def main(a: Args) -> None:
         "mean_makespan",
         "mean_energy_total",
         "mean_energy_active",
+        "mean_energy_env_active",
         "mean_energy_idle",
         "mean_entropy",
     ]
