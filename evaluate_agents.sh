@@ -31,7 +31,7 @@ echo ""
 echo "=========================================="
 echo "Evaluating AL (Aligned) Configuration"
 echo "=========================================="
-python ../scripts/eval_hetero_agents_over_seed_configs.py \
+python scripts/eval_hetero_agents_over_seed_configs.py \
   --longcp-config "$LONGCP_CONFIG" \
   --wide-config "$WIDE_CONFIG" \
   --longcp-ckpt "$LONGCP_CKPT" \
@@ -46,7 +46,7 @@ echo ""
 echo "=========================================="
 echo "Evaluating HS (Homogeneous Speed) Configuration"
 echo "=========================================="
-python ../scripts/eval_hetero_agents_over_seed_configs.py \
+python scripts/eval_hetero_agents_over_seed_configs.py \
   --longcp-config "$LONGCP_CONFIG" \
   --wide-config "$WIDE_CONFIG" \
   --longcp-ckpt logs/longcp_homospeed/ablation/per_variant/hetero/hetero_best.pt \
@@ -61,7 +61,7 @@ echo ""
 echo "=========================================="
 echo "Evaluating HP (Homogeneous Power) Configuration"
 echo "=========================================="
-python ../scripts/eval_hetero_agents_over_seed_configs.py \
+python scripts/eval_hetero_agents_over_seed_configs.py \
   --longcp-config "$LONGCP_CONFIG" \
   --wide-config "$WIDE_CONFIG" \
   --longcp-ckpt logs/longcp_homopower/ablation/per_variant/hetero/hetero_best.pt \
@@ -76,7 +76,7 @@ echo ""
 echo "=========================================="
 echo "Evaluating NA (Not Aligned) Configuration"
 echo "=========================================="
-python ../scripts/eval_hetero_agents_over_seed_configs.py \
+python scripts/eval_hetero_agents_over_seed_configs.py \
   --longcp-config "$LONGCP_CONFIG" \
   --wide-config "$WIDE_CONFIG" \
   --longcp-ckpt logs/longcp_not_aligned/ablation/per_variant/hetero/hetero_best.pt \
