@@ -68,6 +68,7 @@ if hasattr(a, 'anneal_lr'): a.anneal_lr = t.get('anneal_lr', a.anneal_lr)
 ev = cfg.get('evaluation', {})
 if hasattr(a, 'test_every_iters'): a.test_every_iters = ev.get('test_every_iters', a.test_every_iters)
 if hasattr(a, 'robust_eval_alpha'): a.robust_eval_alpha = ev.get('robust_eval_alpha', a.robust_eval_alpha)
+if hasattr(a, 'robust_eval_seeds_file'): a.robust_eval_seeds_file = ev.get('eval_seeds_file')
 
 # Domain
 d = cfg.get('domain', {})

@@ -22,6 +22,7 @@ training:
 
 evaluation:
   test_every_iters: 5
+  eval_seeds_file: "data/rl_configs/train_wide_p005_seeds.json"
   robust_eval_alpha: 0.25
 
 domain:
