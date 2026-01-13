@@ -23,9 +23,9 @@ if PROJECT_ROOT not in sys.path:
 import cogito.dataset_generator.core.gen_vm as gen_vm
 from cogito.dataset_generator.gen_dataset import DatasetArgs
 from cogito.dataset_generator.core.gen_vm import generate_hosts, generate_vms, allocate_vms
-from cogito.rl_model.ablation_gnn import AblationGinAgent, AblationVariant, _pick_device
-from cogito.rl_model.core.env.gym_env import CloudSchedulingGymEnvironment
-from cogito.rl_model.agents.gin_agent.wrapper import GinAgentWrapper
+from cogito.gnn_deeprl_model.ablation_gnn import AblationGinAgent, AblationVariant, _pick_device
+from cogito.gnn_deeprl_model.core.env.gym_env import CloudSchedulingGymEnvironment
+from cogito.gnn_deeprl_model.agents.gin_agent.wrapper import GinAgentWrapper
 
 
 def _compute_optimal_req_divisor(dataset_cfg: dict, seed: int) -> int:
