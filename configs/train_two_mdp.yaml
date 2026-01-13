@@ -8,7 +8,7 @@ experiment:
 training:
   total_timesteps: 600000
   learning_rate: 0.00025
-  num_envs: 10
+  num_envs: 1
   num_steps: 256
   gamma: 0.99
   gae_lambda: 0.95
