@@ -287,6 +287,7 @@ def _eval_agent_on_seeds(
     total_energy = 0.0
     total_energy_active = 0.0
     total_energy_idle = 0.0
+    total_env_energy_active = 0.0  # Actual environment energy
     total_entropy = 0.0
 
     for s in tqdm(seeds, desc=f"{agent_train_domain}->{eval_domain}"):
@@ -297,6 +298,7 @@ def _eval_agent_on_seeds(
         seed_en_total = 0.0
         seed_en_active = 0.0
         seed_en_idle = 0.0
+        seed_en_env_active = 0.0  # Actual environment energy
         seed_entropy = 0.0
 
         n_rep = max(1, int(repeats_per_seed))
@@ -357,6 +359,11 @@ def _eval_agent_on_seeds(
             # eval_heuristics_on_seeds.py).
             en_obs = float(env.prev_obs.energy_consumption())
 
+            # Also get actual environment energy from final_info
+            en_env_active = 0.0
+            if isinstance(final_info, dict) and "total_energy_active" in final_info:
+                en_env_active = float(final_info.get("total_energy_active", 0.0))
+
             # For backwards compatibility, we keep both energy_total and
             # energy_active columns, but set them both to obs.energy_consumption().
             # energy_idle is kept at 0.0.
@@ -368,6 +375,7 @@ def _eval_agent_on_seeds(
             seed_en_total += en_total
             seed_en_active += en_active
             seed_en_idle += en_idle
+            seed_en_env_active += en_env_active
 
             # Mean entropy for this episode
             if ep_steps > 0:
@@ -380,12 +388,14 @@ def _eval_agent_on_seeds(
         en_total_mean = seed_en_total / float(n_rep)
         en_active_mean = seed_en_active / float(n_rep)
         en_idle_mean = seed_en_idle / float(n_rep)
+        en_env_active_mean = seed_en_env_active / float(n_rep)
         entropy_mean = seed_entropy / float(n_rep) if n_rep > 0 else 0.0
 
         total_makespan += mk_mean
         total_energy += en_total_mean
         total_energy_active += en_active_mean
         total_energy_idle += en_idle_mean
+        total_env_energy_active += en_env_active_mean
         total_entropy += entropy_mean
 
         rows.append(
@@ -397,6 +407,7 @@ def _eval_agent_on_seeds(
                 "energy_total": en_total_mean,
                 "energy_active": en_active_mean,
                 "energy_idle": en_idle_mean,
+                "energy_env_active": en_env_active_mean,
                 "entropy": entropy_mean,
             }
         )
@@ -410,6 +421,7 @@ def _eval_agent_on_seeds(
         "mean_energy_total": total_energy / n,
         "mean_energy_active": (total_energy_active / n) if total_energy_active > 0.0 else 0.0,
         "mean_energy_idle": (total_energy_idle / n) if total_energy_idle > 0.0 else 0.0,
+        "mean_energy_env_active": (total_env_energy_active / n) if total_env_energy_active > 0.0 else 0.0,
         "mean_entropy": (total_entropy / n) if total_entropy > 0.0 else 0.0,
     }
     return rows, summary
