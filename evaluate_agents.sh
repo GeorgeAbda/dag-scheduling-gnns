@@ -96,3 +96,22 @@ echo "  - logs/eval_old_AL.csv (and .summary.csv)"
 echo "  - logs/eval_old_HS.csv (and .summary.csv)"
 echo "  - logs/eval_old_HP.csv (and .summary.csv)"
 echo "  - logs/eval_old_NA.csv (and .summary.csv)"
+echo ""
+echo "Energy Metrics:"
+echo "  - energy_active: Observation-based estimate (what agent sees)"
+echo "  - energy_env_active: Actual environment energy (ground truth)"
+echo ""
+echo "Summary Results:"
+for regime in AL HS HP NA; do
+  if [ -f "logs/eval_old_${regime}.summary.csv" ]; then
+    echo ""
+    echo "=== $regime Regime ==="
+    python -c "
+import pandas as pd
+df = pd.read_csv('logs/eval_old_${regime}.summary.csv')
+print('Agent Train Domain | Eval Domain | Makespan | Energy (Obs) | Energy (Actual)')
+for _, row in df.iterrows():
+    print(f'{row[\"agent_train_domain\"]:16} | {row[\"eval_domain\"]:11} | {row[\"mean_makespan\"]:8.2f} | {row[\"mean_energy_active\"]:11.2f} | {row[\"mean_energy_env_active\"]:13.2f}')
+"
+  fi
+done
