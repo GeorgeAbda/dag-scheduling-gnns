@@ -668,9 +668,9 @@ def _train_one_variant_with_traj(args: Args, variant: AG.AblationVariant, device
             )
             env = GinAgentWrapper(env)
             return RecordEpisodeStatistics(env)
-        envs = gym.vector.AsyncVectorEnv([_make_env_dataset for _ in range(int(args.num_envs))])
+        envs = gym.vector.SyncVectorEnv([_make_env_dataset for _ in range(int(args.num_envs))])
     else:
-        envs = gym.vector.AsyncVectorEnv([AG._make_env_thunk(i, envs_args[i]) for i in range(int(args.num_envs))])
+        envs = gym.vector.SyncVectorEnv([AG._make_env_thunk(i, envs_args[i]) for i in range(int(args.num_envs))])
     obs_space = envs.single_observation_space
     act_space = envs.single_action_space
     assert isinstance(act_space, gym.spaces.Discrete)
