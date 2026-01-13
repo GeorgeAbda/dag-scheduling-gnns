@@ -16,7 +16,7 @@ cd "$SCRIPT_DIR"
 export PYTHONPATH="$(cd .. && pwd):$PYTHONPATH"
 
 echo "=========================================="
-echo "Evaluating Trained Agents (Old Script)"
+echo "Evaluating Trained Agents"
 echo "=========================================="
 
 # Common parameters

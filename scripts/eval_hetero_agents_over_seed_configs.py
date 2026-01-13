@@ -86,7 +86,7 @@ def _compute_optimal_req_divisor(dataset_cfg: dict, seed: int) -> int:
     req_div_mem = max(1, max_mem // max_safe_mem_per_task)
     req_div_core = max(1, max_cores // max_safe_cores_per_task)
     
-    print(f"req_div_mem={req_div_mem}, req_div_core={req_div_core}, max_mem={max_mem}, max_cores={max_cores}, n_tasks={n_tasks}")
+    #     print(f"req_div_mem={req_div_mem}, req_div_core={req_div_core}, max_mem={max_mem}, max_cores={max_cores}, n_tasks={n_tasks}")
     return int(max(req_div_mem, req_div_core))
 
 
