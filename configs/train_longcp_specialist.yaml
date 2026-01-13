@@ -38,6 +38,7 @@ domain:
 seed_control:
   mode: "controlled"
   seeds_file: "data/rl_configs/train_long_cp_p08_seeds.json"
+  seeds_file: "data/rl_configs/train_long_cp_p08_seeds.json"
 
 variant:
   name: "hetero"

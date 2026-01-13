@@ -37,6 +37,7 @@ domain:
 # Training seeds are loaded from the domain config file (training_seeds field)
 seed_control:
   mode: "controlled"
+  seeds_file: "data/rl_configs/train_wide_p005_seeds.json"
 
 variant:
   name: "hetero"
